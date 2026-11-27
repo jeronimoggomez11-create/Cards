@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-green-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Grid</h1>
+        <p class="mt-2 text-green-200">Columnas, filas, auto-flow, gap, place-content y place-items. <span class="font-semibold">(22 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 style="scroll-margin-top:90px" id="grid" class="text-white font-bold uppercase">86.grid</h3>
+            <p class="text-gray-500 font-serif">grid</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid gap-2"><img src="assets/images/mariposa.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/delfin.jpg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/leon.jpeg"
+                        class="w-full h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">87.grid-cols-2</h3>
+            <p class="text-gray-500 font-serif">grid-cols-2</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-cols-2 gap-2"><img src="assets/images/flor.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/luna.jpg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/p.jpg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/volcan.jpeg"
+                        class="w-full h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">88.grid-rows-3</h3>
+            <p class="text-gray-500 font-serif">grid-rows-3</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-rows-3 grid-flow-col gap-2"><img src="assets/images/globo.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/elefante"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/colores.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/mapache.jpg"
+                        class="w-full h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">89.auto-cols</h3>
+            <p class="text-gray-500 font-serif">auto-cols-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-flow-col auto-cols-auto gap-2"><img src="assets/images/niña.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/perroconcorbata.avif"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/mariposa.jpeg"
+                        class="w-full h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">90.auto-rows</h3>
+                <p class="text-gray-500 font-serif">auto-rows-auto</p>
+                <h3 class="text-white font-bold"> Resultado:</h3>
+                <div class="mt-2">
+                    <div class="grid auto-rows-auto gap-2"><img src="assets/images/globo.jpeg"
+                            class="w-full h-8 object-cover rounded "><img src="assets/images/luna.jpg"
+                            class="w-full h-16 object-cover rounded "><img src="assets/images/mapache.jpg"
+                            class="w-full h-8 object-cover rounded "></div>
+                </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">91.justify-self</h3>
+            <p class="text-gray-500 font-serif">justify-self-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid gap-2"><img src="assets/images/delfin.jpg"
+                        class="w-16 h-14 object-cover rounded justify-self-center"><img src="assets/images/flor.jpeg"
+                        class="w-full h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">92.grid-cols</h3>
+            <p class="text-gray-500 font-serif">grid-cols-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-cols-4 gap-2"><img src="assets/images/chica.jpeg"
+                        class="w-full h-12 object-cover rounded "><img src="assets/images/hojas.jpeg"
+                        class="w-full h-12 object-cover rounded "><img src="assets/images/luna.jpg"
+                        class="w-full h-12 object-cover rounded "><img src="assets/images/mariposa.jpeg"
+                        class="w-full h-12 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">93.grid-rows</h3>
+            <p class="text-gray-500 font-serif">grid-rows-3</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-rows-3 grid-flow-col gap-2"><img src="assets/images/niña.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/pajaro.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/perro.jpeg"
+                        class="w-full h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">94.grid-auto-flow</h3>
+            <p class="text-gray-500 font-serif">grid-flow-col</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-flow-col gap-2"><img
+                        src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/hojas.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/flor.jpeg"
+                        class="w-full h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">95.grid-auto-cols</h3>
+            <p class="text-gray-500 font-serif">grid-flow-col auto-cols-fr</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-flow-col auto-cols-fr gap-2"><img src="assets/images/luna.jpg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/p.jpg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/volcan.jpeg"
+                        class="w-full h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">96.grid-auto-rows</h3>
+            <p class="text-gray-500 font-serif">auto-rows-fr</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid auto-rows-fr gap-2"><img src="assets/images/colores.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/globo.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/delfin.jpg"
+                        class="w-full h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">97.gap</h3>
+            <p class="text-gray-500 font-serif">gap-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-cols-2 gap-4"><img src="assets/images/astronauta.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/gato.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/delfines.avif"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/elefante"
+                        class="w-full h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">98.justify-items</h3>
+            <p class="text-gray-500 font-serif">justify-items-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-cols-2 justify-items-center gap-2"><img src="assets/images/mapache.jpg"
+                        class="w-14 h-14 object-cover rounded "><img src="assets/images/mariposa.jpeg"
+                        class="w-14 h-14 object-cover rounded "><img src="assets/images/vaca.jpeg"
+                        class="w-14 h-14 object-cover rounded "><img src="assets/images/perroconcorbata.avif"
+                        class="w-14 h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">99.align-items</h3>
+            <p class="text-gray-500 font-serif">items-start</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-cols-3 items-start gap-2 h-24 bg-blue-950 rounded"><img
+                        src="assets/images/perroconcorbata.avif" class="w-full h-8 object-cover rounded "><img
+                        src="assets/images/gato.jpeg" class="w-full h-14 object-cover rounded "><img
+                        src="assets/images/pajaro.jpeg" class="w-full h-10 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">100.grid-template-columns</h3>
+            <p class="text-gray-500 font-serif">grid-cols-3</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-cols-3 gap-2"><img src="assets/images/leon.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/astronauta.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/globo.jpeg"
+                        class="w-full h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">101.grid-template-rows</h3>
+            <p class="text-gray-500 font-serif">grid-rows-3</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-rows-3 grid-flow-col gap-2"><img src="assets/images/hojas.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/hoja.jpeg"
+                        class="w-full h-14 object-cove" class="w-full h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">102.grid-column-gap</h3>
+            <p class="text-gray-500 font-serif">gap-x-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-cols-2 gap-x-4 gap-y-0"><img src="assets/images/mariposa.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/mapache.jpg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/astronauta.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/perroconcorbata.avif"
+                        class="w-full h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">103.grid-row-gap</h3>
+            <p class="text-gray-500 font-serif">gap-y-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-cols-2 gap-y-4 gap-x-0"><img src="assets/images/delfin.jpg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/corazzon.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/colores.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/chica.jpeg"
+                        class="w-full h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">104.grid-auto-columns</h3>
+            <p class="text-gray-500 font-serif">grid-flow-col auto-cols-fr</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid grid-flow-col auto-cols-fr gap-2"><img src="assets/images/astronauta.jpeg"
+                        class="w-full h-14 object-cover rounded "><img src="assets/images/barco.jpeg"
+                        class="w-full h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">105.place-content</h3>
+            <p class="text-gray-500 font-serif">place-content-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid place-content-center gap-2 h-32 bg-blue-950 rounded"><img
+                        src="assets/images/delfin.jpg" class="w-14 h-14 object-cover rounded "><img
+                        src="assets/images/elefante" class="w-14 h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">106.place-items</h3>
+            <p class="text-gray-500 font-serif">place-items-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="grid place-items-center h-28 bg-blue-950 rounded"><img src="assets/images/delfines.avif"
+                        class="w-14 h-14 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">151. place-self</h3>
+            <p class="text-gray-500 font-serif">place-self-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="grid h-24 bg-blue-950 rounded"><div class="place-self-center bg-pink-400 text-black text-xs font-bold p-1">place-self-center</div></div></div>
+        </div>
+    </main>
+</body>
+</html>

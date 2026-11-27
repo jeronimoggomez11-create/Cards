@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-indigo-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Flexbox</h1>
+        <p class="mt-2 text-indigo-200">Dirección, wrap, justify, align, order, grow, shrink y basis. <span class="font-semibold">(11 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 style="scroll-margin-top:90px" id="flexbox" class="text-white font-bold uppercase">75.flex</h3>
+            <p class="text-gray-500 font-serif">flex</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex gap-2"><img src="assets/images/p.jpg" class="w-20 h-20 object-cover rounded "><img
+                        src="assets/images/vaca.jpeg" class="w-20 h-20 object-cover rounded "><img
+                        src="assets/images/pajaro.jpeg" class="w-20 h-20 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">76.flex-direction</h3>
+            <p class="text-gray-500 font-serif">flex-col</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex flex-col gap-2"><img src="assets/images/p.jpg"
+                        class="w-14 h-14 object-cover rounded "><img src="assets/images/vaca.jpeg"
+                        class="w-14 h-14 object-cover rounded "><img src="assets/images/pajaro.jpeg"
+                        class="w-14 h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">77.flex-wrap</h3>
+            <p class="text-gray-500 font-serif">flex-wrap</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex flex-wrap gap-2"><img src="assets/images/hojas.jpeg"
+                        class="w-20 h-14 object-cover rounded "><img src="assets/images/barco.jpeg"
+                        class="w-20 h-14 object-cover rounded "><img
+                        src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                        class="w-20 h-14 object-cover rounded "><img src="assets/images/mapache.jpg"
+                        class="w-20 h-14 object-cover rounded "><img src="assets/images/hoja.jpeg"
+                        class="w-20 h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">78.justify-content</h3>
+            <p class="text-gray-500 font-serif">justify-between</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="flex justify-between"><img src="assets/images/flor.jpeg"
+                    class="w-14 h-14 object-cover rounded "><img src="assets/images/niña.jpeg"
+                    class="w-14 h-14 object-cover rounded "><img src="assets/images/perroconcorbata.avif"
+                    class="w-14 h-14 object-cover rounded "></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">79.items-center</h3>
+            <p class="text-gray-500 font-serif">items-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex items-center gap-2 h-40 bg-blue-950 rounded"><img src="assets/images/pajaro.jpeg"
+                        alt="" class="w-12 h-20 object-cover rounded "><img src="assets/images/hojas.jpeg" alt=""
+                        class="w-12 h-20 object-cover rounded "><img src="assets/images/volcan.jpeg" alt=""
+                        class="w-12 h-20 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">80.align-self</h3>
+            <p class="text-gray-500 font-serif">self-cente-20</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex gap-2 h-24 bg-blue-950 rounded"><img src="assets/images/delfin.jpg"
+                        class="w-12 h-12 object-cover rounded "><img src="assets/images/chica.jpeg"
+                        class="w-12 h-12 object-cover rounded self-center"><img src="assets/images/elefante"
+                        class="w-12 h-12 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">81.order</h3>
+            <p class="text-gray-500 font-serif">order-1 (la primera foto)</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex gap-2"><img src="assets/images/perrito.jpeg"
+                        class="w-14 h-14 object-cover rounded order-1"><img src="assets/images/flor.jpeg"
+                        class="w-14 h-14 object-cover rounded "><img src="assets/images/globo.jpeg"
+                        class="w-14 h-14 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">82.align-content</h3>
+            <p class="text-gray-500 font-serif">content-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex flex-wrap content-center gap-2 h-60 bg-blue-950 rounded"><img
+                        src="assets/images/chica.jpeg" class="w-20 h-20 object-cover rounded "><img
+                        src="assets/images/delfin.jpg" class="w-20 h-20 object-cover rounded "><img
+                        src="assets/images/globo.jpeg" class="w-20 h-20 object-cover rounded "><img
+                        src="assets/images/elefante" class="w-20 h-20 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">83.flex-shrink</h3>
+            <p class="text-gray-500 font-serif"> shrink-0</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex gap-2 overflow-hidden"><img src="assets/images/hojas.jpeg"
+                        class="w-32 h-16 object-cover rounded shrink-0"><img src="assets/images/perrito.jpeg"
+                        class="w-32 h-16 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">84.flex-grow</h3>
+            <p class="text-gray-500 font-serif">flex-grow (v4: grow)</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex gap-2"><img
+                        src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                        class="w-14 h-14 object-cover rounded "><img src="assets/images/leon.jpeg"
+                        class="grow h-14 object-cover rounded"></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">85.flex-basis</h3>
+            <p class="text-gray-500 font-serif">flex-basis-1/4 (v4: basis-1/4)</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex gap-2"><img src="assets/images/colores.jpeg"
+                        class="basis-1/4 h-20 object-cover rounded"><img src="assets/images/corazzon.jpeg"
+                        class="grow h-20 object-cover rounded"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

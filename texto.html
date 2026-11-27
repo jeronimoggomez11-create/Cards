@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto y tipografía | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-blue-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Texto y tipografía</h1>
+        <p class="mt-2 text-blue-200">Color, sombra, alineación, decoración, fuentes y saltos de línea. <span class="font-semibold">(27 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 style="scroll-margin-top:90px" id="texto" class="text-white font-bold">1. COLOR</h3>
+            <p class="text-gray-500 font-serif">text-blue-400</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-yellow-500 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold">2.BACKGROUND-COLOR</h3>
+            <p class="text-gray-500 font-serif">bg-yellow-500</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold">3.TEXT-SHADOW</h3>
+            <p class="text-gray-500 font-serif">text-shadow-lg</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-white  text-shadow-lg "> La felicidad no es tener lo que quieres, es querer lo que
+                tienes.
+            </p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center">
+            <h3 class="text-white font-bold">5. TEXT-ALIGN</h3>
+            <p class="text-gray-500 font-serif">text-center</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold">6.TEXT-DECORATION</h3>
+            <p class="text-gray-500 font-serif ">underline</p>
+            <h3 class="text-white font-bold  "> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold">7.TEXT-TRANSFORM</h3>
+            <p class="text-gray-500 font-serif">uppercase</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-white uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg shadow-black">
+            <h3 class="text-white font-bold">8.BOX-SHADOW</h3>
+            <p class="text-gray-500 font-serif">shadow-lg shadow-black</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  opacity-75">
+            <h3 class="text-white font-bold">9. OPACITY</h3>
+            <p class="text-gray-500 font-serif">opacity-75</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm font-sans  ">
+            <h3 class="text-white font-bold uppercase">10.FONT-FAMILY</h3>
+            <p class="text-gray-500 ">font-sans</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase ">11.font-size</h3>
+            <p class="text-gray-500 font-serif">text-xs</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-white  text-xs"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg  ">
+            <h3 class="text-white font-bold uppercase">12.font-weight</h3>
+            <p class="text-gray-500 font-serif">font-semibold</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white font-semibold"> La felicidad no es tener lo que quieres, es querer lo que tienes.
+            </p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  ">
+            <h3 class="text-white font-bold uppercase">13. font-style</h3>
+            <p class="text-gray-500 font-serif">italic</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 italic "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm font-sans  ">
+            <h3 class="text-white font-bold uppercase">14.text-overflow</h3>
+            <p class="text-gray-500 font-serif ">truncate</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white truncate "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase ">15.text-decoration-color</h3>
+            <p class="text-gray-500 font-serif">underline-yellow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300 underline decoration-yellow-500"> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg  ">
+            <h3 class="text-white font-bold uppercase">16.text-decoration-thickness</h3>
+            <p class="text-gray-500 font-serif">underline-thick</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white underline decoration-4 "> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-end ">
+            <h3 class="text-white font-bold uppercase">17.text-align-last</h3>
+            <p class="text-gray-500 font-serif">text-right-last</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm font-sans ">
+            <h3 class="text-white font-bold uppercase">18.text-justify</h3>
+            <p class="text-gray-500 font-serif ">text-justify</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white text-justify "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase ">19.line-break</h3>
+            <p class="text-gray-500 font-serif">break-all</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300   break-all"> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm  ">
+            <h3 class="text-white font-bold uppercase">20.word-break</h3>
+            <p class="text-gray-500 font-serif">break-all</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white break-all"> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+    </section>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center tracking-tight">
+            <h3 class="text-white font-bold uppercase">129. letter-spacing</h3>
+            <p class="text-gray-500 font-serif">tracking-tight</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 ">  La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg mx-[1rem]">
+            <h3 class="text-white font-bold uppercase">130.word-spacing</h3>
+            <p class="text-gray-500 font-serif ">mx-[1rem]</p>
+            <h3 class="text-white font-bold  "> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-sm/6">
+            <h3 class="text-white font-bold uppercase ">131. line-height</h3>
+            <p class="text-gray-500 font-serif">text-sm/6</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg shadow-black align-top">
+            <h3 class="text-white font-bold uppercase">132.vertical-align</h3>
+            <p class="text-gray-500 font-serif">align-top</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center whitespace-normal">
+            <h3 class="text-white font-bold uppercase">133. white-space</h3>
+            <p class="text-gray-500 font-serif">whitespace-normal</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 ">  La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg wrap-anywhere">
+            <h3 class="text-white font-bold uppercase">134.break-word</h3>
+            <p class="text-gray-500 font-serif ">wrap-anywhere</p>
+            <h3 class="text-white font-bold  "> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm wrap-break-word">
+            <h3 class="text-white font-bold uppercase ">135.overflow-wrap</h3>
+            <p class="text-gray-500 font-serif">wrap-break-word</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">215. hyphens</h3>
+            <p class="text-gray-500 font-serif">hyphens-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><p lang="es" class="hyphens-auto w-28 bg-blue-950 rounded p-1 text-xs text-justify text-white">Anticonstitucionalmente electroencefalografista incomprensiblemente</p></div>
+        </div>
+    </main>
+</body>
+</html>

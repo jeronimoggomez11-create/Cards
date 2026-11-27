@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow e interacción | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-teal-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Overflow e interacción</h1>
+        <p class="mt-2 text-teal-200">Overflow, z-index, pointer-events, resize, cursor y user-select. <span class="font-semibold">(9 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm  ">
+            <h3 style="scroll-margin-top:90px" id="interaccion" class="text-white font-bold uppercase">44.overflow</h3>
+            <p class="text-gray-500 font-serif">overflow-hidden</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <div class="bg-blue-950 w-full h-14 rounded mt-2 overflow-hidden ">
+                <div class="bg-blue-400 w-24 h-24 rounded-full -mt-4 -ml-4">
+
+                </div>
+            </div>
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm   ">
+            <h3 class="text-white font-bold uppercase">45.overflow-x</h3>
+            <p class="text-gray-500 font-serif">overflow-x-hidden</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <div class="bg-blue-950 w-full h-14 rounded mt-2 overflow-x-hidden ">
+                <div class="bg-blue-400 w-24 h-24 rounded-full -mt-4 -ml-4">
+
+                </div>
+            </div>
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm   ">
+            <h3 class="text-white font-bold uppercase">46.overflow-y</h3>
+            <p class="text-gray-500 font-serif">overflow-y-hidden</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <div class="bg-blue-950 w-full h-14 rounded mt-2 overflow-y-hidden">
+                <div class="bg-blue-400 w-[115%] h-24 rounded -mt-3 "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase ">47. z-index</h3>
+            <p class="text-gray-500 font-serif">z-10</p>
+            <h3 class="text-white font-bold mt-2"> Resultado:</h3>
+            <div class="z-40 bg-white w-9 h-9 rounded-full  text-center text-red-700 border-2 border-black ">05</div>
+            <div class="z-30  bg-white w-9 h-9 rounded-full  text-center text-red-700 border-2 border-black">04</div>
+            <div class="z-20  bg-white w-9 h-9 rounded-full  text-center text-red-700 border-2 border-black">03</div>
+            <div class="z-10  bg-white w-9 h-9 rounded-full  text-center  text-red-700 border-2 border-black">02</div>
+            <div class="z-0  bg-white w-9 h-9 rounded-full  text-center text-red-700  border-2 border-black ">01</div>
+
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm pointer-events-none ">
+            <h3 class="text-white font-bold uppercase">48.pointer-events</h3>
+            <p class="text-gray-500 font-serif">pointer-events-none</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm resize-none ">
+            <h3 class="text-white font-bold uppercase">49.resize</h3>
+            <p class="text-gray-500 font-serif">resize-none</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="  text-white "> resize:</p>
+            <textarea class="bg-blue-950 border border-blue-400 rounded w-full h-14 mt-2 resize "></textarea>
+            <p class="  text-white "> resize-none</p>
+            <textarea class="bg-blue-950 border border-blue-400 rounded w-full h-14 mt-2 resize-none "></textarea>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase">50.cursor</h3>
+            <p class="text-gray-500 font-serif ">cursor-pointer</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white cursor-pointer "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm user-select-none ">
+            <h3 class="text-white font-bold uppercase ">51.user-select</h3>
+            <p class="text-gray-500 font-serif">break-all</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300 select-none "> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+    </section>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">254. touch-action</h3>
+            <p class="text-gray-500 font-serif">touch-action-none</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="touch-action-none h-16 bg-blue-950 rounded text-xs p-2">En pantalla táctil, arrastrar aquí no hace scroll ni zoom (touch-action-none)</div></div>
+        </div>
+    </main>
+</body>
+</html>

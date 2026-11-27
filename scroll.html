@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll y desplazamiento | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-cyan-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Scroll y desplazamiento</h1>
+        <p class="mt-2 text-cyan-200">Scroll-snap, scroll-margin, scroll-padding, overscroll y scroll-behavior. <span class="font-semibold">(16 tarjetas)</span></p>
+    </section>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">219. overscroll-behavior</h3>
+            <p class="text-gray-500 font-serif">overscroll-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs overscroll-auto"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">220. overscroll-behavior-x</h3>
+            <p class="text-gray-500 font-serif">overscroll-x-auto</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs overscroll-x-auto"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">221. overscroll-behavior-y</h3>
+            <p class="text-gray-500 font-serif">overscroll-y-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs overscroll-y-auto"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">222. scroll-behavior</h3>
+            <p class="text-gray-500 font-serif">scroll-behavior-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto scroll-behavior-auto bg-blue-950 rounded text-xs p-1"><a href="#fin-222" class="underline text-pink-300">ir al final</a><div class="h-32"></div><div id="fin-222" class="text-pink-300">Final</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">256. scroll-snap-type</h3>
+            <p class="text-gray-500 font-serif">snap-type-mandatory</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-type-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">257. scroll-snap-align</h3>
+            <p class="text-gray-500 font-serif">snap-align-start</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-align-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-align-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-align-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-align-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">258. scroll-padding</h3>
+            <p class="text-gray-500 font-serif">scroll-padding-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory scroll-padding-4"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">259. scroll-margin</h3>
+            <p class="text-gray-500 font-serif">scroll-margin-4</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-margin-4">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-margin-4">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-margin-4">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-margin-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">276. scroll-margin-top</h3>
+            <p class="text-gray-500 font-serif">scroll-mt-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mt-4">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mt-4">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mt-4">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mt-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">277. scroll-margin-right</h3>
+            <p class="text-gray-500 font-serif">scroll-mr-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs snap-x snap-mandatory"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mr-4">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mr-4">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mr-4">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mr-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">278. scroll-margin-bottom</h3>
+            <p class="text-gray-500 font-serif">scroll-mb-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mb-4">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mb-4">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mb-4">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mb-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">279. scroll-margin-left</h3>
+            <p class="text-gray-500 font-serif">scroll-ml-4</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs snap-x snap-mandatory"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-ml-4">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-ml-4">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-ml-4">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-ml-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">280. scroll-padding-top</h3>
+            <p class="text-gray-500 font-serif">scroll-pt-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory scroll-pt-4"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">281. scroll-padding-right</h3>
+            <p class="text-gray-500 font-serif">scroll-pr-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs snap-x snap-mandatory scroll-pr-4"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">282. scroll-padding-bottom</h3>
+            <p class="text-gray-500 font-serif">scroll-pb-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory scroll-pb-4"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">283. scroll-padding-left</h3>
+            <p class="text-gray-500 font-serif">scroll-pl-4</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs snap-x snap-mandatory scroll-pl-4"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones y transiciones | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-purple-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Transformaciones y transiciones</h1>
+        <p class="mt-2 text-purple-200">Rotate, scale, skew, translate, perspective, duración y delay. <span class="font-semibold">(13 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-end transform rotate-45 ">
+            <h3 style="scroll-margin-top:90px" id="transformaciones" class="text-white font-bold uppercase">21.transform</h3>
+            <p class="text-gray-500 font-serif">transform rotate-45</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-blue-400  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm font-sans  duration-300 ease-in-out 
+             hover:bg-blue-700 hover:scale-105 ">
+            <h3 class="text-white font-bold uppercase">22.transition</h3>
+            <p class="text-gray-500 font-serif ">ease-in-out
+                hover:bg-blue-700 hover:scale-105</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm transition-transform duration-300 ease-out 
+            hover:-translate-y-2 hover:rotate-2">
+            <h3 class="text-white font-bold uppercase ">23.transition-property</h3>
+            <p class="text-gray-500 font-serif">transition-transform duration-300 ease-out
+                hover:-translate-y-2 hover:rotate-2</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300   break-all"> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm transition-transform duration-500 ease-out 
+            hover:-translate-y-2 hover:rotate-2 ">
+            <h3 class="text-white font-bold uppercase">24.transition-duration</h3>
+            <p class="text-gray-500 font-serif">duration-500</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm transition-all duration-500 ease-in 
+            hover:translate-x-8 hover:opacity-25 ">
+            <h3 class="text-white font-bold uppercase">25.transition-timing-function</h3>
+            <p class="text-gray-500 font-serif">transition-all duration-500 ease-in
+                hover:translate-x-8 hover:opacity-25</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm transition-all duration-300 delay-300 ease-out
+               hover:bg-pink-300 hover:translate-x-3 ">
+            <h3 class="text-white font-bold uppercase">26.transition-delay</h3>
+            <p class="text-gray-500 font-serif ">transition-all duration-300 delay-300 ease-out
+                hover:bg-pink-300 hover:translate-x-3</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  origin-center transition-transform duration-500 
+            hover:rotate-45">
+            <h3 class="text-white font-bold uppercase ">35.transform-origin</h3>
+            <p class="text-gray-500 font-serif">origin-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300  "> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+    </section>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">226. transform-style</h3>
+            <p class="text-gray-500 font-serif">transform</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-6 bg-blue-950 rounded flex justify-center"><div class="transform rotate-12 scale-110 w-16 h-8 bg-pink-400 text-black text-xs font-bold flex items-center justify-center">transform</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">228. perspective-origin</h3>
+            <p class="text-gray-500 font-serif">origin-bottom</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-6 bg-blue-950 rounded flex justify-center" style="perspective:120px"><div class="origin-bottom rotate-x-45 w-16 h-10 bg-pink-400 text-black text-xs font-bold flex items-center justify-center">origin-bottom</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">229. transform-box</h3>
+            <p class="text-gray-500 font-serif">box-border</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="bg-blue-950 rounded p-2"><div class="box-border w-full p-4 border-4 border-pink-400 text-xs">box-border: el ancho incluye padding y borde</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">245. transform-origin-x</h3>
+            <p class="text-gray-500 font-serif">origin-left</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-8 bg-blue-950 rounded flex justify-center"><div class="w-16 h-8 bg-pink-400 text-black text-xs font-bold flex items-center justify-center rotate-45 origin-left">origin-left</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">246. transform-origin-y</h3>
+            <p class="text-gray-500 font-serif">origin-top</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-8 bg-blue-950 rounded flex justify-center"><div class="w-16 h-8 bg-pink-400 text-black text-xs font-bold flex items-center justify-center rotate-45 origin-top">origin-top</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">247. transform-origin-z</h3>
+            <p class="text-gray-500 font-serif">origin-bottom</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-8 bg-blue-950 rounded flex justify-center"><div class="w-16 h-8 bg-pink-400 text-black text-xs font-bold flex items-center justify-center rotate-45 origin-bottom">origin-bottom</div></div></div>
+        </div>
+    </main>
+</body>
+</html>

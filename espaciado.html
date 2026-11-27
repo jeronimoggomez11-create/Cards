@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaciado y tamaño | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-orange-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Espaciado y tamaño</h1>
+        <p class="mt-2 text-orange-200">Margin, padding, width, height y sus min / max. <span class="font-semibold">(16 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 style="scroll-margin-top:90px" id="espaciado" class="text-white font-bold uppercase">59.margin</h3>
+            <p class="text-gray-500 font-serif">m-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="bg-pink-600 rounded"><img
+                        src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                        alt="flor" class="w-60 h-60 object-cover rounded m-4"></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">60.margin-top</h3>
+            <p class="text-gray-500 font-serif">mt-8</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-4">
+                <div class="bg-blue-950 ">
+                    <img src="assets/images/volcan.jpeg" alt="flor" class="w-20 h-20 object-cover rounded mt-8">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">61.margin-right</h3>
+            <p class="text-gray-500 font-serif">mr-12</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="bg-blue-950 rounded flex"><img src="assets/images/barco.jpeg" alt="barco"
+                        class="w-20 h-20 object-cover rounded mr-12"><img src="assets/images/niña.jpeg" alt="niña"
+                        class="w-20 h-20 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">62.margin-bottom</h3>
+            <p class="text-gray-500 font-serif">mb-16</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="bg-blue-950 rounded">
+                    <img src="assets/images/perro.jpeg" class="w-20 h-20 object-cover rounded mb-16">
+                    <img src="assets/images/niña.jpeg" class="w-20 h-20 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">63.margin-left</h3>
+            <p class="text-gray-500 font-serif">ml-20</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2 ">
+                <div class="bg-blue-950 rounded"><img src="assets/images/niña.jpeg"
+                        class="w-20 h-20 object-cover rounded ml-20"></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">64.padding</h3>
+            <p class="text-gray-500 font-serif">p-6</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2 w-full">
+                <div class="bg-blue-400 p-6 rounded"><img src="assets/images/perro.jpeg"
+                        class="w-full h-full object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">65.padding-top</h3>
+            <p class="text-gray-500 font-serif">pt-10</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="bg-blue-400 pt-10 rounded">
+                    <img src="assets/images/barco.jpeg" class="w-full h-40 object-cover rounded ">
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">66.padding-right</h3>
+            <p class="text-gray-500 font-serif">pr-16</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="bg-blue-400 pr-16 rounded"><img src="assets/images/pajaro.jpeg"
+                        class="w-full h-50 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">67.padding-bottom</h3>
+            <p class="text-gray-500 font-serif">pb-20</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="bg-blue-400 pb-20 rounded"><img src="assets/images/hojas.jpeg"
+                        class="w-full h-20 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">68.padding-left</h3>
+            <p class="text-gray-500 font-serif">pl-24</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="bg-blue-400 pl-24 rounded"><img src="assets/images/volcan.jpeg"
+                        class="w-full h-12 object-cover rounded "></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">69.width</h3>
+            <p class="text-gray-500 font-serif">w-1/2</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/leon.jpeg" class="w-1/2 h-24 object-cover rounded"></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">70.min-width</h3>
+            <p class="text-gray-500 font-serif">min-w-64</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="overflow-hidden"><img src="assets/images/hoja.jpeg"
+                        class="w-10 min-w-64 h-24 object-cover rounded"></div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">71.max-width</h3>
+            <p class="text-gray-500 font-serif">max-w-3xl</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/mapache.jpg" class="w-full max-w-3xl h-24 object-cover rounded">
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">72.height</h3>
+            <p class="text-gray-500 font-serif">h-64</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/vaca.jpeg" class="w-full h-64 object-cover rounded"></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">73.min-height</h3>
+            <p class="text-gray-500 font-serif"> min-h-24</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/niña.jpeg" class="w-full h-10 min-h-24 object-cover rounded">
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">74.max-height</h3>
+            <p class="text-gray-500 font-serif">max-h-96 </p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/perroconcorbata.avif"
+                    class="w-full h-40 max-h-96 object-cover rounded"></div>
+        </div>
+    </section>
+</body>
+</html>

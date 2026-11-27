@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style>
+@keyframes k-fade-in{0%{opacity:0}100%{opacity:1}}
+.animate-fade-in{animation:k-fade-in 1.5s infinite}
+@keyframes k-zoom-in{0%{transform:scale(0)}100%{transform:scale(1)}}
+.animate-zoom-in{animation:k-zoom-in 1.5s infinite}
+@keyframes k-slide-up{0%{transform:translateY(60px)}100%{transform:translateY(0)}}
+.animate-slide-up{animation:k-slide-up 1.5s infinite}
+@keyframes k-rotate-45{0%{transform:rotate(0)}100%{transform:rotate(45deg)}}
+.animate-rotate-45{animation:k-rotate-45 1.5s infinite}
+@keyframes k-slide-fade-up{0%{transform:translateY(40px);opacity:0}100%{transform:translateY(0);opacity:1}}
+.animate-slide-fade-up{animation:k-slide-fade-up 1.5s infinite}
+@keyframes k-bounce-scale-down{0%{transform:scale(1.4)}60%{transform:scale(.9)}100%{transform:scale(1)}}
+.animate-bounce-scale-down{animation:k-bounce-scale-down 1.5s infinite}
+@keyframes k-flip-x{0%{transform:rotateX(0)}100%{transform:rotateX(360deg)}}
+.animate-flip-x{animation:k-flip-x 1.5s infinite}
+@keyframes k-pulse-slow{0%,100%{opacity:1}50%{opacity:.4}}
+.animate-pulse-slow{animation:k-pulse-slow 2s infinite}
+@keyframes k-wiggle-slow{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.animate-wiggle-slow{animation:k-wiggle-slow 2s infinite}
+@keyframes k-blink-slow{0%,100%{opacity:1}50%{opacity:0}}
+.animate-blink-slow{animation:k-blink-slow 2s infinite}
+@keyframes k-slide-bounce-up{0%{transform:translateY(80px)}60%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+.animate-slide-bounce-up{animation:k-slide-bounce-up 1.5s infinite}
+@keyframes k-heartbeat-slow{0%,100%{transform:scale(1)}25%{transform:scale(1.15)}40%{transform:scale(1)}60%{transform:scale(1.15)}}
+.animate-heartbeat-slow{animation:k-heartbeat-slow 2s infinite}
+@keyframes k-rubberband-slow{0%,100%{transform:scale(1,1)}30%{transform:scale(1.25,.75)}50%{transform:scale(.75,1.25)}70%{transform:scale(1.15,.85)}}
+.animate-rubberband-slow{animation:k-rubberband-slow 2s infinite}
+@keyframes k-head-shake-slow{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.animate-head-shake-slow{animation:k-head-shake-slow 2s infinite}
+@keyframes k-jello-slow{0%,100%{transform:skew(0)}30%{transform:skew(-12deg,-12deg)}50%{transform:skew(6deg,6deg)}70%{transform:skew(-3deg,-3deg)}}
+.animate-jello-slow{animation:k-jello-slow 2s infinite}
+@keyframes k-tada-slow{0%,100%{transform:scale(1)}10%,20%{transform:scale(.9) rotate(-3deg)}30%,50%,70%{transform:scale(1.1) rotate(3deg)}40%,60%{transform:scale(1.1) rotate(-3deg)}}
+.animate-tada-slow{animation:k-tada-slow 2s infinite}
+@keyframes k-bounce-in-left-slow{0%{transform:translateX(-60px);opacity:0}60%{transform:none;opacity:1}80%{transform:scale(.95)}100%{transform:none}}
+.animate-bounce-in-left-slow{animation:k-bounce-in-left-slow 2s infinite}
+@keyframes k-fade-in-left-slow{0%{transform:translateX(-60px);opacity:0}100%{transform:none;opacity:1}}
+.animate-fade-in-left-slow{animation:k-fade-in-left-slow 2s infinite}
+@keyframes k-slide-in-left-slow{0%{transform:translateX(-60px)}100%{transform:none}}
+.animate-slide-in-left-slow{animation:k-slide-in-left-slow 2s infinite}
+@keyframes k-bounce-in-right-slow{0%{transform:translateX(60px);opacity:0}60%{transform:none;opacity:1}80%{transform:scale(.95)}100%{transform:none}}
+.animate-bounce-in-right-slow{animation:k-bounce-in-right-slow 2s infinite}
+@keyframes k-fade-in-right-slow{0%{transform:translateX(60px);opacity:0}100%{transform:none;opacity:1}}
+.animate-fade-in-right-slow{animation:k-fade-in-right-slow 2s infinite}
+@keyframes k-slide-in-right-slow{0%{transform:translateX(60px)}100%{transform:none}}
+.animate-slide-in-right-slow{animation:k-slide-in-right-slow 2s infinite}
+@keyframes k-bounce-in-up-slow{0%{transform:translateY(-60px);opacity:0}60%{transform:none;opacity:1}80%{transform:scale(.95)}100%{transform:none}}
+.animate-bounce-in-up-slow{animation:k-bounce-in-up-slow 2s infinite}
+@keyframes k-fade-in-up-slow{0%{transform:translateY(-60px);opacity:0}100%{transform:none;opacity:1}}
+.animate-fade-in-up-slow{animation:k-fade-in-up-slow 2s infinite}
+@keyframes k-slide-in-up-slow{0%{transform:translateY(-60px)}100%{transform:none}}
+.animate-slide-in-up-slow{animation:k-slide-in-up-slow 2s infinite}
+@keyframes k-bounce-in-down-slow{0%{transform:translateY(60px);opacity:0}60%{transform:none;opacity:1}80%{transform:scale(.95)}100%{transform:none}}
+.animate-bounce-in-down-slow{animation:k-bounce-in-down-slow 2s infinite}
+@keyframes k-fade-in-down-slow{0%{transform:translateY(60px);opacity:0}100%{transform:none;opacity:1}}
+.animate-fade-in-down-slow{animation:k-fade-in-down-slow 2s infinite}
+@keyframes k-slide-in-down-slow{0%{transform:translateY(60px)}100%{transform:none}}
+.animate-slide-in-down-slow{animation:k-slide-in-down-slow 2s infinite}
+.animate-reverse{animation:k-fade-in 1.5s infinite reverse}
+.animate-ease-out{animation:k-zoom-in 1.5s ease-out infinite}
+.backdrop-blur-8{backdrop-filter:blur(8px)}
+.hyphens-auto{hyphens:auto}
+.scroll-behavior-auto{scroll-behavior:auto}
+.touch-action-none{touch-action:none}
+.snap-type-mandatory{scroll-snap-type:y mandatory}
+.snap-align-start{scroll-snap-align:start}
+.scroll-padding-4{scroll-padding:1rem}
+.scroll-margin-4{scroll-margin:1rem}
+.relative-card{position:relative}
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="flex gap-6 p-4">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="tarjetas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-pulse">
+            <h3 class="text-white font-bold uppercase">125. animate-spin</h3>
+            <p class="text-gray-500 font-serif">animate-pulse</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 ">  La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-bounce">
+            <h3 class="text-white font-bold uppercase">126.animate-bounce</h3>
+            <p class="text-gray-500 font-serif ">animate bounce</p>
+            <h3 class="text-white font-bold  "> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-ping">
+            <h3 class="text-white font-bold uppercase ">127. animate ping</h3>
+            <p class="text-gray-500 font-serif">uppercase</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+
+        <div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-pulse">
+            <h3 class="text-white font-bold uppercase">128.animate-scale</h3>
+            <p class="text-gray-500 font-serif">animate-pulse</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+
+    </main>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center tracking-tight">
+            <h3 class="text-white font-bold uppercase">129. letter-spacing</h3>
+            <p class="text-gray-500 font-serif">tracking-tight</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 ">  La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg mx-[1rem]">
+            <h3 class="text-white font-bold uppercase">130.word-spacing</h3>
+            <p class="text-gray-500 font-serif ">mx-[1rem]</p>
+            <h3 class="text-white font-bold  "> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-sm/6">
+            <h3 class="text-white font-bold uppercase ">131. line-height</h3>
+            <p class="text-gray-500 font-serif">text-sm/6</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+
+        <div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg shadow-black align-top">
+            <h3 class="text-white font-bold uppercase">132.vertical-align</h3>
+            <p class="text-gray-500 font-serif">align-top</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center whitespace-normal">
+            <h3 class="text-white font-bold uppercase">133. white-space</h3>
+            <p class="text-gray-500 font-serif">whitespace-normal</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 ">  La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg wrap-anywhere">
+            <h3 class="text-white font-bold uppercase">134.break-word</h3>
+            <p class="text-gray-500 font-serif ">wrap-anywhere</p>
+            <h3 class="text-white font-bold  "> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm wrap-break-word">
+            <h3 class="text-white font-bold uppercase ">135.overflow-wrap</h3>
+            <p class="text-gray-500 font-serif">wrap-break-word</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+
+        <div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg shadow-black collapse">
+            <h3 class="text-white font-bold uppercase">136. visibility</h3>
+            <p class="text-gray-500 font-serif">collapse</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+
+    </main>
+
+     <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center border-separate">
+            <h3 class="text-white font-bold uppercase">137.position</h3>
+            <p class="text-gray-500 font-serif">border-separate</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 ">  La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg relative top-4">
+            <h3 class="text-white font-bold uppercase">138.top</h3>
+            <p class="text-gray-500 font-serif ">relative top-4</p>
+            <h3 class="text-white font-bold  "> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm relative right-6">
+            <h3 class="text-white font-bold uppercase ">139.right</h3>
+            <p class="text-gray-500 font-serif">right-6</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+
+        <div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg shadow-black collapse">
+            <h3 class="text-white font-bold uppercase">136. visibility</h3>
+            <p class="text-gray-500 font-serif">collapse</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">112. position</h3>
+            <p class="text-gray-500 font-serif">static</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="static top-8 left-8 bg-pink-400 text-black text-xs font-bold p-1">static</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">113. top</h3>
+            <p class="text-gray-500 font-serif">top-0</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute top-0 bg-pink-400 text-black text-xs font-bold p-1">top-0</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">114. right</h3>
+            <p class="text-gray-500 font-serif">right-0</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute right-0 bg-pink-400 text-black text-xs font-bold p-1">right-0</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">115. bottom</h3>
+            <p class="text-gray-500 font-serif">bottom-0</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute bottom-0 bg-pink-400 text-black text-xs font-bold p-1">bottom-0</div></div></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">116. left</h3>
+            <p class="text-gray-500 font-serif">left-0</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute left-0 top-8 bg-pink-400 text-black text-xs font-bold p-1">left-0</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">118. float</h3>
+            <p class="text-gray-500 font-serif">float-left</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="bg-blue-950 rounded p-2 text-xs"><div class="float-left w-12 h-12 bg-pink-400 mr-2"></div>Texto que rodea al elemento flotante. Texto que rodea al elemento flotante. Texto que rodea.</div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">119. clear</h3>
+            <p class="text-gray-500 font-serif">clear-left</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="bg-blue-950 rounded p-2 text-xs"><div class="float-left w-12 h-12 bg-pink-400 mr-2"></div><p>Párrafo junto al flotante.</p><p class="clear-left bg-pink-400 text-black">Este párrafo usa clear-left: baja debajo del flotante.</p></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">120. display</h3>
+            <p class="text-gray-500 font-serif">hidden</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="bg-blue-950 rounded p-2 text-xs"><p>Antes</p><div class="hidden bg-pink-400">Esto no se ve</div><p>Después (pegado, sin hueco)</p></div></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">125. inset</h3>
+            <p class="text-gray-500 font-serif">inset-0</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute inset-0 bg-pink-400 text-black text-xs font-bold p-1">inset-0</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">126. inset-x</h3>
+            <p class="text-gray-500 font-serif">inset-x-0</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute inset-x-0 top-4 h-6 bg-pink-400 text-black text-xs font-bold p-1">inset-x-0</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">127. inset-y</h3>
+            <p class="text-gray-500 font-serif">inset-y-0</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute inset-y-0 left-4 w-8 bg-pink-400 text-black text-xs font-bold p-1">inset-y-0</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">128. inset-x-auto</h3>
+            <p class="text-gray-500 font-serif">inset-x-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute inset-x-auto top-4 w-24 bg-pink-400 text-black text-xs font-bold p-1">inset-x-auto</div></div></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">129. inset-y-auto</h3>
+            <p class="text-gray-500 font-serif">inset-y-auto</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 bg-blue-950 rounded"><div class="absolute inset-y-auto left-4 h-8 w-24 bg-pink-400 text-black text-xs font-bold p-1">inset-y-auto</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">151. place-self</h3>
+            <p class="text-gray-500 font-serif">place-self-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="grid h-24 bg-blue-950 rounded"><div class="place-self-center bg-pink-400 text-black text-xs font-bold p-1">place-self-center</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">157. backdrop-blur</h3>
+            <p class="text-gray-500 font-serif">backdrop-blur-8</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-blur-8" style="background:rgba(255,255,255,.15)">backdrop-blur-8</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">158. backdrop-brightness</h3>
+            <p class="text-gray-500 font-serif">backdrop-brightness-75</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-brightness-75" style="background:rgba(255,255,255,.15)">backdrop-brightness-75</div></div></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">159. backdrop-contrast</h3>
+            <p class="text-gray-500 font-serif">backdrop-contrast-125</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-contrast-125" style="background:rgba(255,255,255,.15)">backdrop-contrast-125</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">160. backdrop-grayscale</h3>
+            <p class="text-gray-500 font-serif">backdrop-grayscale-50</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-grayscale-50" style="background:rgba(255,255,255,.15)">backdrop-grayscale-50</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">161. backdrop-hue-rotate</h3>
+            <p class="text-gray-500 font-serif">backdrop-hue-rotate-90</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-hue-rotate-90" style="background:rgba(255,255,255,.15)">backdrop-hue-rotate-90</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">162. backdrop-invert</h3>
+            <p class="text-gray-500 font-serif">backdrop-invert</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-invert" style="background:rgba(255,255,255,.15)">backdrop-invert</div></div></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">163. backdrop-opacity</h3>
+            <p class="text-gray-500 font-serif">backdrop-opacity-50</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-opacity-50" style="background:rgba(255,255,255,.15)">backdrop-opacity-50</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">164. backdrop-saturate</h3>
+            <p class="text-gray-500 font-serif">backdrop-saturate-150</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-saturate-150" style="background:rgba(255,255,255,.15)">backdrop-saturate-150</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">165. backdrop-sepia</h3>
+            <p class="text-gray-500 font-serif">backdrop-sepia-50</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-sepia-50" style="background:rgba(255,255,255,.15)">backdrop-sepia-50</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">166. mix-blend-overlay</h3>
+            <p class="text-gray-500 font-serif">mix-blend-darken</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-24 rounded flex items-end" style="background:linear-gradient(90deg,#ec4899,#38bdf8)"><div class="mix-blend-darken bg-yellow-300 w-full h-12 text-black text-xs font-bold p-1">mix-blend-darken</div></div></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">167. animate-none</h3>
+            <p class="text-gray-500 font-serif">animate-none</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex gap-2 items-center"><div class="animate-none w-12 h-12 bg-pink-400"></div><div class="animate-bounce w-12 h-12 bg-pink-400"></div></div><p class="text-xs text-gray-300">izq: animate-none (quieto) · der: animate-bounce</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-reverse">
+            <h3 class="text-white font-bold uppercase">168. animate-reverse</h3>
+            <p class="text-gray-500 font-serif">animate-reverse</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-zoom-in">
+            <h3 class="text-white font-bold uppercase">172. animate-zoom</h3>
+            <p class="text-gray-500 font-serif">animate-zoom-in</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-slide-up">
+            <h3 class="text-white font-bold uppercase">173. animate-slide</h3>
+            <p class="text-gray-500 font-serif">animate-slide-up</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-fade-in">
+            <h3 class="text-white font-bold uppercase">174. animate-fade</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-rotate-45">
+            <h3 class="text-white font-bold uppercase">176. animate-rotate</h3>
+            <p class="text-gray-500 font-serif">animate-rotate-45</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-slide-fade-up">
+            <h3 class="text-white font-bold uppercase">177. animate-slide-fade</h3>
+            <p class="text-gray-500 font-serif">animate-slide-fade-up</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-bounce-scale-down">
+            <h3 class="text-white font-bold uppercase">178. animate-bounce-scale</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-scale-down</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-flip-x">
+            <h3 class="text-white font-bold uppercase">179. animate-flip</h3>
+            <p class="text-gray-500 font-serif">animate-flip-x</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-pulse-slow">
+            <h3 class="text-white font-bold uppercase">180. animate-pulse</h3>
+            <p class="text-gray-500 font-serif">animate-pulse-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-wiggle-slow">
+            <h3 class="text-white font-bold uppercase">181. animate-wiggle</h3>
+            <p class="text-gray-500 font-serif">animate-wiggle-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-blink-slow">
+            <h3 class="text-white font-bold uppercase">182. animate-blink</h3>
+            <p class="text-gray-500 font-serif">animate-blink-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-slide-bounce-up">
+            <h3 class="text-white font-bold uppercase">183. animate-slide-bounce</h3>
+            <p class="text-gray-500 font-serif">animate-slide-bounce-up</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-heartbeat-slow">
+            <h3 class="text-white font-bold uppercase">184. animate-heartbeat</h3>
+            <p class="text-gray-500 font-serif">animate-heartbeat-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-rubberband-slow">
+            <h3 class="text-white font-bold uppercase">185. animate-rubberband</h3>
+            <p class="text-gray-500 font-serif">animate-rubberband-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-head-shake-slow">
+            <h3 class="text-white font-bold uppercase">186. animate-head-shake</h3>
+            <p class="text-gray-500 font-serif">animate-head-shake-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-jello-slow">
+            <h3 class="text-white font-bold uppercase">187. animate-jello</h3>
+            <p class="text-gray-500 font-serif">animate-jello-slow</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-tada-slow">
+            <h3 class="text-white font-bold uppercase">188. animate-tada</h3>
+            <p class="text-gray-500 font-serif">animate-tada-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-bounce-in-left-slow">
+            <h3 class="text-white font-bold uppercase">189. animate-bounce-in-left</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-in-left-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-bounce-in-right-slow">
+            <h3 class="text-white font-bold uppercase">190. animate-bounce-in-right</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-in-right-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-bounce-in-up-slow">
+            <h3 class="text-white font-bold uppercase">191. animate-bounce-in-up</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-in-up-slow</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-bounce-in-down-slow">
+            <h3 class="text-white font-bold uppercase">192. animate-bounce-in-down</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-in-down-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-fade-in-left-slow">
+            <h3 class="text-white font-bold uppercase">193. animate-fade-in-left</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in-left-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-fade-in-right-slow">
+            <h3 class="text-white font-bold uppercase">194. animate-fade-in-right</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in-right-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-fade-in-up-slow">
+            <h3 class="text-white font-bold uppercase">195. animate-fade-in-up</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in-up-slow</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-fade-in-down-slow">
+            <h3 class="text-white font-bold uppercase">196. animate-fade-in-down</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in-down-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-slide-in-left-slow">
+            <h3 class="text-white font-bold uppercase">197. animate-slide-in-left</h3>
+            <p class="text-gray-500 font-serif">animate-slide-in-left-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-slide-in-right-slow">
+            <h3 class="text-white font-bold uppercase">198. animate-slide-in-right</h3>
+            <p class="text-gray-500 font-serif">animate-slide-in-right-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-slide-in-up-slow">
+            <h3 class="text-white font-bold uppercase">199. animate-slide-in-up</h3>
+            <p class="text-gray-500 font-serif">animate-slide-in-up-slow</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-slide-in-down-slow">
+            <h3 class="text-white font-bold uppercase">200. animate-slide-in-down</h3>
+            <p class="text-gray-500 font-serif">animate-slide-in-down-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">215. hyphens</h3>
+            <p class="text-gray-500 font-serif">hyphens-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><p lang="es" class="hyphens-auto w-28 bg-blue-950 rounded p-1 text-xs text-justify text-white">Anticonstitucionalmente electroencefalografista incomprensiblemente</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">219. overscroll-behavior</h3>
+            <p class="text-gray-500 font-serif">overscroll-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs overscroll-auto"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">220. overscroll-behavior-x</h3>
+            <p class="text-gray-500 font-serif">overscroll-x-auto</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs overscroll-x-auto"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">221. overscroll-behavior-y</h3>
+            <p class="text-gray-500 font-serif">overscroll-y-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs overscroll-y-auto"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 ">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 ">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">222. scroll-behavior</h3>
+            <p class="text-gray-500 font-serif">scroll-behavior-auto</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto scroll-behavior-auto bg-blue-950 rounded text-xs p-1"><a href="#fin-222" class="underline text-pink-300">ir al final</a><div class="h-32"></div><div id="fin-222" class="text-pink-300">Final</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">226. transform-style</h3>
+            <p class="text-gray-500 font-serif">transform</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-6 bg-blue-950 rounded flex justify-center"><div class="transform rotate-12 scale-110 w-16 h-8 bg-pink-400 text-black text-xs font-bold flex items-center justify-center">transform</div></div></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">228. perspective-origin</h3>
+            <p class="text-gray-500 font-serif">origin-bottom</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-6 bg-blue-950 rounded flex justify-center" style="perspective:120px"><div class="origin-bottom rotate-x-45 w-16 h-10 bg-pink-400 text-black text-xs font-bold flex items-center justify-center">origin-bottom</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">229. transform-box</h3>
+            <p class="text-gray-500 font-serif">box-border</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="bg-blue-950 rounded p-2"><div class="box-border w-full p-4 border-4 border-pink-400 text-xs">box-border: el ancho incluye padding y borde</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-ease-out">
+            <h3 class="text-white font-bold uppercase">237. animation-timing-function</h3>
+            <p class="text-gray-500 font-serif">animate-ease-out</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">245. transform-origin-x</h3>
+            <p class="text-gray-500 font-serif">origin-left</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-8 bg-blue-950 rounded flex justify-center"><div class="w-16 h-8 bg-pink-400 text-black text-xs font-bold flex items-center justify-center rotate-45 origin-left">origin-left</div></div></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">246. transform-origin-y</h3>
+            <p class="text-gray-500 font-serif">origin-top</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-8 bg-blue-950 rounded flex justify-center"><div class="w-16 h-8 bg-pink-400 text-black text-xs font-bold flex items-center justify-center rotate-45 origin-top">origin-top</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">247. transform-origin-z</h3>
+            <p class="text-gray-500 font-serif">origin-bottom</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="p-8 bg-blue-950 rounded flex justify-center"><div class="w-16 h-8 bg-pink-400 text-black text-xs font-bold flex items-center justify-center rotate-45 origin-bottom">origin-bottom</div></div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">248. object-fit</h3>
+            <p class="text-gray-500 font-serif">object-contain</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27100%27%3E%3Crect%20width%3D%27200%27%20height%3D%27100%27%20fill%3D%27%23ec4899%27/%3E%3Ccircle%20cx%3D%27100%27%20cy%3D%2750%27%20r%3D%2740%27%20fill%3D%27%23fde047%27/%3E%3C/svg%3E" class="w-24 h-24 bg-blue-950 rounded object-contain" alt="demo"></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">249. object-position</h3>
+            <p class="text-gray-500 font-serif">object-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27100%27%3E%3Crect%20width%3D%27200%27%20height%3D%27100%27%20fill%3D%27%23ec4899%27/%3E%3Ccircle%20cx%3D%27100%27%20cy%3D%2750%27%20r%3D%2740%27%20fill%3D%27%23fde047%27/%3E%3C/svg%3E" class="w-24 h-24 bg-blue-950 rounded object-none object-center" alt="demo"></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">254. touch-action</h3>
+            <p class="text-gray-500 font-serif">touch-action-none</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="touch-action-none h-16 bg-blue-950 rounded text-xs p-2">En pantalla táctil, arrastrar aquí no hace scroll ni zoom (touch-action-none)</div></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">256. scroll-snap-type</h3>
+            <p class="text-gray-500 font-serif">snap-type-mandatory</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-type-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">257. scroll-snap-align</h3>
+            <p class="text-gray-500 font-serif">snap-align-start</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-align-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-align-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-align-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-align-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">258. scroll-padding</h3>
+            <p class="text-gray-500 font-serif">scroll-padding-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory scroll-padding-4"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">259. scroll-margin</h3>
+            <p class="text-gray-500 font-serif">scroll-margin-4</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-margin-4">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-margin-4">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-margin-4">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-margin-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">276. scroll-margin-top</h3>
+            <p class="text-gray-500 font-serif">scroll-mt-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mt-4">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mt-4">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mt-4">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mt-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">277. scroll-margin-right</h3>
+            <p class="text-gray-500 font-serif">scroll-mr-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs snap-x snap-mandatory"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mr-4">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mr-4">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mr-4">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mr-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">278. scroll-margin-bottom</h3>
+            <p class="text-gray-500 font-serif">scroll-mb-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mb-4">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mb-4">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-mb-4">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-mb-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">279. scroll-margin-left</h3>
+            <p class="text-gray-500 font-serif">scroll-ml-4</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs snap-x snap-mandatory"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-ml-4">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-ml-4">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start scroll-ml-4">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start scroll-ml-4">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">280. scroll-padding-top</h3>
+            <p class="text-gray-500 font-serif">scroll-pt-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory scroll-pt-4"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">281. scroll-padding-right</h3>
+            <p class="text-gray-500 font-serif">scroll-pr-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs snap-x snap-mandatory scroll-pr-4"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">282. scroll-padding-bottom</h3>
+            <p class="text-gray-500 font-serif">scroll-pb-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-20 overflow-y-auto bg-blue-950 rounded text-xs snap-y snap-mandatory scroll-pb-4"><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="h-20 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+    </main>
+
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+        <div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">283. scroll-padding-left</h3>
+            <p class="text-gray-500 font-serif">scroll-pl-4</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex overflow-x-auto bg-blue-950 rounded text-xs snap-x snap-mandatory scroll-pl-4"><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 1</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 2</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-800 snap-start">Bloque 3</div><div class="shrink-0 w-full h-16 flex items-center justify-center border-b border-blue-700 bg-blue-900 snap-start">Bloque 4</div></div><p class="text-xs text-gray-300 mt-1">Haz scroll dentro de la caja</p></div>
+        </div>
+    </main>
+</body>
+</html>

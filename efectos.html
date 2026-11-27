@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros y efectos | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-sky-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Filtros y efectos</h1>
+        <p class="mt-2 text-sky-200">Filter, backdrop, mix-blend, clip-path, isolation y shape-outside. <span class="font-semibold">(20 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm   ">
+            <h3 style="scroll-margin-top:90px" id="efectos" class="text-white font-bold uppercase">52.filter</h3>
+            <p class="text-gray-500 font-serif">grayscale md:grayscale-50 </p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <img class=" max-w-6x1 border-2 mt-2 grayscale md:grayscale-50"
+                src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg">
+
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">53. backdrop-filter</h3>
+            <p class="text-gray-400 font-serif">bg-white/50 backdrop-sepia md:backdrop-sepia-0</p>
+            <h3 class="text-white font-bold mt-2">Resultado:</h3>
+            <div
+                class="mt-2 h-48 border-2 bg-cover bg-center bg-[url('assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg')]">
+                <div class="h-full w-full bg-white/50 backdrop-sepia md:backdrop-sepia-0"></div>
+
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">54. mix-blend-mode</h3>
+            <p class="text-gray-400 font-serif">mix-blend-screen</p>
+            <h3 class="text-white font-bold mt-2">Resultado:</h3>
+            <div class="mt-7 bg-blue-900 border-2">
+                <img class="w-full mix-blend-screen"
+                    src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                    alt="flor">
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase ">55.clip-path</h3>
+            <p class="text-gray-500 font-serif break-all">[clip-path:polygon(0_0,100%_15%,100%_100%,0_85%)]</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="w-full mt-7  ">
+                <img class="w-full [clip-path:polygon(0_0,100%_15%,100%_100%,0_80%)]"
+                    src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                    alt="flor">
+
+            </div>
+
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm  ">
+            <h3 class="text-white font-bold uppercase">56.will-change</h3>
+            <p class="text-gray-500 font-serif">break-all</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <div class="mt-7">
+                <div class="overflow-hidden rounded "><img
+                        src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                        class="w-full  object-cover will-change-transform transition-transform duration-500 hover:scale-110">
+
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  ">
+            <h3 class="text-white font-bold uppercase">57.isolation</h3>
+            <p class="text-gray-500 font-serif">text-right-last</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="relative isolate"><img
+                        src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                        alt="flor" class="w-full ">
+                    <div class="absolute inset-0 bg-yellow-400 mix-blend-multiply rounded"></div>
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">58.shape-outside</h3>
+            <p class="text-gray-500 font-serif"> [shape-outside:circle(50%)]</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img
+                    src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                    alt="" class="float-left w-60 h-60 rounded-full object-cover mr-2 [shape-outside:circle(60%)]">
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">118.backdrop-filter-opacity</h3>
+            <p class="text-gray-500 font-serif">backdrop-opacity-50</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="relative"><img src="assets/images/delfin.jpg" class="w-full h-28 object-cover rounded ">
+                    <p class="absolute inset-3 backdrop-opacity-50 bg-white/30 text-white p-2 rounded text-sm">La
+                        felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">157. backdrop-blur</h3>
+            <p class="text-gray-500 font-serif">backdrop-blur-8</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-blur-8" style="background:rgba(255,255,255,.15)">backdrop-blur-8</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">158. backdrop-brightness</h3>
+            <p class="text-gray-500 font-serif">backdrop-brightness-75</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-brightness-75" style="background:rgba(255,255,255,.15)">backdrop-brightness-75</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">159. backdrop-contrast</h3>
+            <p class="text-gray-500 font-serif">backdrop-contrast-125</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-contrast-125" style="background:rgba(255,255,255,.15)">backdrop-contrast-125</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">160. backdrop-grayscale</h3>
+            <p class="text-gray-500 font-serif">backdrop-grayscale-50</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-grayscale-50" style="background:rgba(255,255,255,.15)">backdrop-grayscale-50</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">161. backdrop-hue-rotate</h3>
+            <p class="text-gray-500 font-serif">backdrop-hue-rotate-90</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-hue-rotate-90" style="background:rgba(255,255,255,.15)">backdrop-hue-rotate-90</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">162. backdrop-invert</h3>
+            <p class="text-gray-500 font-serif">backdrop-invert</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-invert" style="background:rgba(255,255,255,.15)">backdrop-invert</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">163. backdrop-opacity</h3>
+            <p class="text-gray-500 font-serif">backdrop-opacity-50</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-opacity-50" style="background:rgba(255,255,255,.15)">backdrop-opacity-50</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">164. backdrop-saturate</h3>
+            <p class="text-gray-500 font-serif">backdrop-saturate-150</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-saturate-150" style="background:rgba(255,255,255,.15)">backdrop-saturate-150</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">165. backdrop-sepia</h3>
+            <p class="text-gray-500 font-serif">backdrop-sepia-50</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="relative h-24 rounded overflow-hidden" style="background:linear-gradient(90deg,#ec4899,#fde047,#4ade80)"><div class="absolute inset-0 flex items-center justify-center font-black text-black text-xl">FONDO</div><div class="absolute inset-3 rounded p-1 text-xs text-black font-bold backdrop-sepia-50" style="background:rgba(255,255,255,.15)">backdrop-sepia-50</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">166. mix-blend-overlay</h3>
+            <p class="text-gray-500 font-serif">mix-blend-darken</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="h-24 rounded flex items-end" style="background:linear-gradient(90deg,#ec4899,#38bdf8)"><div class="mix-blend-darken bg-yellow-300 w-full h-12 text-black text-xs font-bold p-1">mix-blend-darken</div></div></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">248. object-fit</h3>
+            <p class="text-gray-500 font-serif">object-contain</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27100%27%3E%3Crect%20width%3D%27200%27%20height%3D%27100%27%20fill%3D%27%23ec4899%27/%3E%3Ccircle%20cx%3D%27100%27%20cy%3D%2750%27%20r%3D%2740%27%20fill%3D%27%23fde047%27/%3E%3C/svg%3E" class="w-24 h-24 bg-blue-950 rounded object-contain" alt="demo"></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">249. object-position</h3>
+            <p class="text-gray-500 font-serif">object-center</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27100%27%3E%3Crect%20width%3D%27200%27%20height%3D%27100%27%20fill%3D%27%23ec4899%27/%3E%3Ccircle%20cx%3D%27100%27%20cy%3D%2750%27%20r%3D%2740%27%20fill%3D%27%23fde047%27/%3E%3C/svg%3E" class="w-24 h-24 bg-blue-950 rounded object-none object-center" alt="demo"></div>
+        </div>
+    </main>
+</body>
+</html>

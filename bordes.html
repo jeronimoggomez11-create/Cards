@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordes y divisores | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-yellow-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Bordes y divisores</h1>
+        <p class="mt-2 text-yellow-200">Border por lado, opacidad, divide-x, divide-y y estilos. <span class="font-semibold">(18 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class="  border-4 border-red-300  bg-blue-500 b-red-300  p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold">4.BORDER-COLOR</h3>
+            <p class="text-gray-700 font-serif">border-2 border-red-300</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase">42.border-radius</h3>
+            <p class="text-gray-500 font-serif ">rounded-lg</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  border-4 border-black">
+            <h3 class="text-white font-bold uppercase ">43.border-width</h3>
+            <p class="text-gray-500 font-serif">border-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300  "> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm border-dashed border-4 border-black ">
+            <h3 class="text-white font-bold uppercase">44.border-style</h3>
+            <p class="text-gray-500 font-serif">border-dashed</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">42.border-collapse</h3>
+            <p class="text-gray-500 font-serif">border-collapse</p>
+            <h3 class="text-black font-bold">Resultado:</h3>
+
+            <table class="border-collapse w-full mt-2">
+                <tr>
+                    <td class="border-2 border-blue-400 h-10"></td>
+                    <td class="border-2 border-blue-400 h-10"></td>
+                </tr>
+            </table>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">42.border-collapse</h3>
+            <p class="text-gray-500 font-serif">border-collapse</p>
+            <h3 class="text-black font-bold">Resultado:</h3>
+
+            <table class="border-separate w-full mt-2">
+                <tr>
+                    <td class="border-2 border-blue-400 h-10"></td>
+                    <td class="border-2 border-blue-400 h-10"></td>
+                </tr>
+            </table>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase ">43.outline</h3>
+            <p class="text-gray-500 font-serif">outline-none</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <button class="bg-blue-500 w-full h-10 rounded mt-2 outline-none"></button>
+
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 style="scroll-margin-top:90px" id="bordes" class="text-white font-bold uppercase">107.border</h3>
+            <p class="text-gray-500 font-serif">border</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/vaca.jpeg"
+                    class="w-full h-20 object-cover rounded border border-pink-900"></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">108.border-top</h3>
+            <p class="text-gray-500 font-serif">border-t-2</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/perro.jpeg"
+                    class="w-full h-20 object-cover rounded border-t-2 border-pink-900"></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">109.border-right</h3>
+            <p class="text-gray-500 font-serif">border-r-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/perrito.jpeg"
+                    class="w-full h-20 object-cover rounded border-r-4 border-pink-900"></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">110.border-bottom</h3>
+            <p class="text-gray-500 font-serif">border-b</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/pajaro.jpeg"
+                    class="w-full h-20 object-cover rounded border-b border-pink-900"></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">111.border-left</h3>
+            <p class="text-gray-500 font-serif">border-l</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/p.jpg"
+                    class="w-full h-20 object-cover rounded border-l border-pink-900"></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">112.border-opacity</h3>
+            <p class="text-gray-500 font-serif">border-indigo-500/100 vs border-indigo-500/50</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/niña.jpeg"
+                    class="w-full h-14 object-cover rounded border-4 border-indigo-500/100">
+                <div class="mt-2"></div><img src="assets/images/mariposa.jpeg"
+                    class="w-full h-14 object-cover rounded border-4 border-indigo-500/50">
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">113.divide-y</h3>
+            <p class="text-gray-500 font-serif">divide-y</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="divide-y divide-white">
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img src="assets/images/mapache.jpg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 1</span></div>
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img src="assets/images/luna.jpg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 2</span></div>
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img src="assets/images/leon.jpeg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 3</span></div>
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">114.divide-x</h3>
+            <p class="text-gray-500 font-serif">divide-x</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex divide-x divide-white">
+                    <div class="px-2"><img src="assets/images/hojas.jpeg" class="w-10 h-10 object-cover rounded "></div>
+                    <div class="px-2"><img src="assets/images/hoja.jpeg" class="w-10 h-10 object-cover rounded "></div>
+                    <div class="px-2"><img src="assets/images/gato.jpeg" class="w-10 h-10 object-cover rounded "></div>
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">115.divide-opacity</h3>
+            <p class="text-gray-500 font-serif">divide-y divide-white/75</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="divide-y divide-white/75">
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img
+                            src="assets/images/flower-beautiful-flowers-images-flower-images-wallpapers-flowergraphy-free-photo.jpg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 1</span></div>
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img src="assets/images/flor.jpeg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 2</span></div>
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img src="assets/images/delfin.jpg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 3</span></div>
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">116.divide-style</h3>
+            <p class="text-gray-500 font-serif">divide-dashed</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="divide-y divide-dashed divide-white">
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img src="assets/images/corazzon.jpeg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 1</span></div>
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img src="assets/images/colores.jpeg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 2</span></div>
+                    <div class="flex items-center gap-2 py-2 text-white text-sm"><img src="assets/images/chica.jpeg"
+                            class="w-8 h-8 object-cover rounded "><span>Elemento 3</span></div>
+                </div>
+            </div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">117.divide-width</h3>
+            <p class="text-gray-500 font-serif">divide-x-2</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2">
+                <div class="flex divide-x-2 divide-white">
+                    <div class="px-2"><img src="assets/images/barco.jpeg" class="w-20 h-20 object-cover rounded "></div>
+                    <div class="px-2"><img src="assets/images/astronauta.jpeg" class="w-20 h-20 object-cover rounded ">
+                    </div>
+                    <div class="px-2"><img src="assets/images/gato.jpeg" class="w-20 h-20 object-cover rounded "></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

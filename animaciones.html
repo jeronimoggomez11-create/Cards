@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones | TALLER TAILWIND</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/keyframes.css">
+    <style type="text/tailwindcss">
+        /* Las tarjetas de "tarjetas (2)" se hicieron con Tailwind v3: este bloque conserva su color de borde por defecto */
+        @layer base { .fuente-tarjetas *, .fuente-tarjetas { border-color: var(--color-gray-200); } }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-900 text-white shadow">
+        <nav>
+            <ul class="flex gap-6 p-4 max-w-6xl mx-auto font-semibold">
+                <li><a class="hover:border-b-2 hover:border-white" href="index.html">INICIO</a></li>
+                <li><a class="hover:border-b-2 hover:border-white" href="todas.html">TARJETAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto p-3 flex flex-wrap gap-2 items-center">
+            <a href="todas.html" class="px-3 py-1 rounded bg-gray-800 hover:bg-black text-white text-sm font-semibold">Todas</a>
+            <a href="texto.html" class="px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Texto</a>
+            <a href="transformaciones.html" class="px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold">Transformaciones</a>
+            <a href="animaciones.html" class="px-3 py-1 rounded bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold" style="outline:3px solid #1f2937;outline-offset:2px">Animaciones</a>
+            <a href="interaccion.html" class="px-3 py-1 rounded bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold">Overflow</a>
+            <a href="efectos.html" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold">Filtros</a>
+            <a href="espaciado.html" class="px-3 py-1 rounded bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold">Espaciado</a>
+            <a href="flexbox.html" class="px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold">Flexbox</a>
+            <a href="grid.html" class="px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">Grid</a>
+            <a href="bordes.html" class="px-3 py-1 rounded bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-semibold">Bordes</a>
+            <a href="posicion.html" class="px-3 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold">Posición</a>
+            <a href="scroll.html" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold">Scroll</a>
+        </div>
+    </div>
+
+    <section class="bg-pink-800 text-white text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Animaciones</h1>
+        <p class="mt-2 text-pink-200">Spin, ping, bounce, pulse y sus propiedades. <span class="font-semibold">(50 tarjetas)</span></p>
+    </section>
+
+<section id="cards" class="fuente-tarjetas grid grid-cols-4 gap-6 max-w-6x1 mx-auto p-4 perspective-normal">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-spin ">
+            <h3 style="scroll-margin-top:90px" id="animaciones" class="text-white font-bold uppercase ">27.animation</h3>
+            <p class="text-gray-500 font-serif">animate-spin</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300  "> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm 	animate-ping ">
+            <h3 class="text-white font-bold uppercase">28.animation-name</h3>
+            <p class="text-gray-500 font-serif">animate-ping</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-bounce [animation-duration:400ms]  ">
+            <h3 class="text-white font-bold uppercase">29.animation-duration</h3>
+            <p class="text-gray-500 font-serif break-all">[animation-duration:200ms]</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-bounce [animation-delay:10s]">
+            <h3 class="text-white font-bold uppercase">30.animation-delay</h3>
+            <p class="text-gray-500 font-serif ">[animation-delay:10s]</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-bounce [animation-iteration-count:3]">
+            <h3 class="text-white font-bold uppercase ">31.animation-iteration-count</h3>
+            <p class="text-gray-500 font-serif">[animation-iteration-count:3]</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300  "> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+<div
+            class=" bg-blue-900   p-4 rounded-lg max-w-sm animate-spin [animation-direction:alternate] [animation-duration:5s] ">
+            <h3 class="text-white font-bold uppercase">32.animation-direction </h3>
+            <p class="text-gray-500 font-serif">[animation-direction:alternate]</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+<div
+            class="bg-blue-900 p-4 rounded-lg max-w-sm animate-ping [animation-iteration-count:3] [animation-fill-mode:backwards] ">
+            <h3 class="text-white font-bold uppercase">33.animation-fill-mode</h3>
+            <p class="text-gray-500 font-serif"> [animation-fill-mode:backwards]</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-spin [animation-play-state:paused] ">
+            <h3 class="text-white font-bold uppercase">34.animation-play-state</h3>
+            <p class="text-gray-500 font-serif ">[animation-play-state:paused]</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm  scale-150">
+            <h3 class="text-white font-bold uppercase">36.scale</h3>
+            <p class="text-gray-500 font-serif">scale-150</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  rotate-90">
+            <h3 class="text-white font-bold uppercase">37.rotate</h3>
+            <p class="text-gray-500 font-serif">rotate-90</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm skew-x-6 ">
+            <h3 class="text-white font-bold uppercase">38.skew</h3>
+            <p class="text-gray-500 font-serif ">skew-x-6 </p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class=" -translate-x-4 bg-blue-900 p-4 rounded-lg max-w-sm ">
+            <h3 class="text-white font-bold uppercase ">39.translate</h3>
+            <p class="text-gray-500 font-serif">-translate-x-4</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-blue-300  "> La felicidad no es tener lo que quieres, es
+                querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900   p-4 rounded-lg max-w-sm perspective-500 ">
+            <h3 class="text-white font-bold uppercase">40.perspective</h3>
+            <p class="text-gray-500 font-serif">break-all</p>
+            <h3 class="text-white font-bold "> Resultado:</h3>
+            <p class="  text-white "> La felicidad no es tener lo que quieres, es querer lo
+                que tienes.</p>
+        </div>
+<div
+            class="bg-blue-900 p-4 rounded-lg max-w-sm transition-transform duration-700 hover:[transform:rotateY(180deg)] [backface-visibility:visible] ">
+            <h3 class="text-white font-bold uppercase">41.backface-visibility</h3>
+            <p class="text-gray-500 font-serif">backface-visible</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400  "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">119.animate-spin</h3>
+            <p class="text-gray-500 font-serif">animate-pulse</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <div class="mt-2"><img src="assets/images/vaca.jpeg" class="w-full h-28 object-cover rounded animate-pulse">
+            </div>
+        </div>
+    </section>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-pulse">
+            <h3 class="text-white font-bold uppercase">125. animate-spin</h3>
+            <p class="text-gray-500 font-serif">animate-pulse</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400 ">  La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-bounce">
+            <h3 class="text-white font-bold uppercase">126.animate-bounce</h3>
+            <p class="text-gray-500 font-serif ">animate bounce</p>
+            <h3 class="text-white font-bold  "> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm animate-ping">
+            <h3 class="text-white font-bold uppercase ">127. animate ping</h3>
+            <p class="text-gray-500 font-serif">uppercase</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class=" bg-blue-900 b-red-300  p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-pulse">
+            <h3 class="text-white font-bold uppercase">128.animate-scale</h3>
+            <p class="text-gray-500 font-serif">animate-pulse</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="  text-pink-300 "> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+    <main class="grid grid-cols-4 gap-6 max-w-6xl mx-auto p-4 items-start">
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm">
+            <h3 class="text-white font-bold uppercase">167. animate-none</h3>
+            <p class="text-gray-500 font-serif">animate-none</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <div class="mt-1 text-white"><div class="flex gap-2 items-center"><div class="animate-none w-12 h-12 bg-pink-400"></div><div class="animate-bounce w-12 h-12 bg-pink-400"></div></div><p class="text-xs text-gray-300">izq: animate-none (quieto) · der: animate-bounce</p></div>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-reverse">
+            <h3 class="text-white font-bold uppercase">168. animate-reverse</h3>
+            <p class="text-gray-500 font-serif">animate-reverse</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-zoom-in">
+            <h3 class="text-white font-bold uppercase">172. animate-zoom</h3>
+            <p class="text-gray-500 font-serif">animate-zoom-in</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-slide-up">
+            <h3 class="text-white font-bold uppercase">173. animate-slide</h3>
+            <p class="text-gray-500 font-serif">animate-slide-up</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-fade-in">
+            <h3 class="text-white font-bold uppercase">174. animate-fade</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-rotate-45">
+            <h3 class="text-white font-bold uppercase">176. animate-rotate</h3>
+            <p class="text-gray-500 font-serif">animate-rotate-45</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-slide-fade-up">
+            <h3 class="text-white font-bold uppercase">177. animate-slide-fade</h3>
+            <p class="text-gray-500 font-serif">animate-slide-fade-up</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-bounce-scale-down">
+            <h3 class="text-white font-bold uppercase">178. animate-bounce-scale</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-scale-down</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-flip-x">
+            <h3 class="text-white font-bold uppercase">179. animate-flip</h3>
+            <p class="text-gray-500 font-serif">animate-flip-x</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-pulse-slow">
+            <h3 class="text-white font-bold uppercase">180. animate-pulse</h3>
+            <p class="text-gray-500 font-serif">animate-pulse-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-wiggle-slow">
+            <h3 class="text-white font-bold uppercase">181. animate-wiggle</h3>
+            <p class="text-gray-500 font-serif">animate-wiggle-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-blink-slow">
+            <h3 class="text-white font-bold uppercase">182. animate-blink</h3>
+            <p class="text-gray-500 font-serif">animate-blink-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-slide-bounce-up">
+            <h3 class="text-white font-bold uppercase">183. animate-slide-bounce</h3>
+            <p class="text-gray-500 font-serif">animate-slide-bounce-up</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-heartbeat-slow">
+            <h3 class="text-white font-bold uppercase">184. animate-heartbeat</h3>
+            <p class="text-gray-500 font-serif">animate-heartbeat-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-rubberband-slow">
+            <h3 class="text-white font-bold uppercase">185. animate-rubberband</h3>
+            <p class="text-gray-500 font-serif">animate-rubberband-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-head-shake-slow">
+            <h3 class="text-white font-bold uppercase">186. animate-head-shake</h3>
+            <p class="text-gray-500 font-serif">animate-head-shake-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-jello-slow">
+            <h3 class="text-white font-bold uppercase">187. animate-jello</h3>
+            <p class="text-gray-500 font-serif">animate-jello-slow</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-tada-slow">
+            <h3 class="text-white font-bold uppercase">188. animate-tada</h3>
+            <p class="text-gray-500 font-serif">animate-tada-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-bounce-in-left-slow">
+            <h3 class="text-white font-bold uppercase">189. animate-bounce-in-left</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-in-left-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-bounce-in-right-slow">
+            <h3 class="text-white font-bold uppercase">190. animate-bounce-in-right</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-in-right-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-bounce-in-up-slow">
+            <h3 class="text-white font-bold uppercase">191. animate-bounce-in-up</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-in-up-slow</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-bounce-in-down-slow">
+            <h3 class="text-white font-bold uppercase">192. animate-bounce-in-down</h3>
+            <p class="text-gray-500 font-serif">animate-bounce-in-down-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-fade-in-left-slow">
+            <h3 class="text-white font-bold uppercase">193. animate-fade-in-left</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in-left-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-fade-in-right-slow">
+            <h3 class="text-white font-bold uppercase">194. animate-fade-in-right</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in-right-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-fade-in-up-slow">
+            <h3 class="text-white font-bold uppercase">195. animate-fade-in-up</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in-up-slow</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-fade-in-down-slow">
+            <h3 class="text-white font-bold uppercase">196. animate-fade-in-down</h3>
+            <p class="text-gray-500 font-serif">animate-fade-in-down-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-slide-in-left-slow">
+            <h3 class="text-white font-bold uppercase">197. animate-slide-in-left</h3>
+            <p class="text-gray-500 font-serif">animate-slide-in-left-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm shadow-lg shadow-black animate-slide-in-right-slow">
+            <h3 class="text-white font-bold uppercase">198. animate-slide-in-right</h3>
+            <p class="text-gray-500 font-serif">animate-slide-in-right-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm text-center animate-slide-in-up-slow">
+            <h3 class="text-white font-bold uppercase">199. animate-slide-in-up</h3>
+            <p class="text-gray-500 font-serif">animate-slide-in-up-slow</p>
+            <h3 class="text-black font-bold"> Resultado:</h3>
+            <p class="text-blue-400"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-slide-in-down-slow">
+            <h3 class="text-white font-bold uppercase">200. animate-slide-in-down</h3>
+            <p class="text-gray-500 font-serif">animate-slide-in-down-slow</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-white underline"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+<div class="bg-blue-900 p-4 rounded-lg max-w-sm  animate-ease-out">
+            <h3 class="text-white font-bold uppercase">237. animation-timing-function</h3>
+            <p class="text-gray-500 font-serif">animate-ease-out</p>
+            <h3 class="text-white font-bold"> Resultado:</h3>
+            <p class="text-pink-300 uppercase"> La felicidad no es tener lo que quieres, es querer lo que tienes.</p>
+        </div>
+    </main>
+</body>
+</html>

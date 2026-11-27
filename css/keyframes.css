@@ -1,0 +1,67 @@
+@keyframes k-fade-in{0%{opacity:0}100%{opacity:1}}
+.animate-fade-in{animation:k-fade-in 1.5s infinite}
+@keyframes k-zoom-in{0%{transform:scale(0)}100%{transform:scale(1)}}
+.animate-zoom-in{animation:k-zoom-in 1.5s infinite}
+@keyframes k-slide-up{0%{transform:translateY(60px)}100%{transform:translateY(0)}}
+.animate-slide-up{animation:k-slide-up 1.5s infinite}
+@keyframes k-rotate-45{0%{transform:rotate(0)}100%{transform:rotate(45deg)}}
+.animate-rotate-45{animation:k-rotate-45 1.5s infinite}
+@keyframes k-slide-fade-up{0%{transform:translateY(40px);opacity:0}100%{transform:translateY(0);opacity:1}}
+.animate-slide-fade-up{animation:k-slide-fade-up 1.5s infinite}
+@keyframes k-bounce-scale-down{0%{transform:scale(1.4)}60%{transform:scale(.9)}100%{transform:scale(1)}}
+.animate-bounce-scale-down{animation:k-bounce-scale-down 1.5s infinite}
+@keyframes k-flip-x{0%{transform:rotateX(0)}100%{transform:rotateX(360deg)}}
+.animate-flip-x{animation:k-flip-x 1.5s infinite}
+@keyframes k-pulse-slow{0%,100%{opacity:1}50%{opacity:.4}}
+.animate-pulse-slow{animation:k-pulse-slow 2s infinite}
+@keyframes k-wiggle-slow{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.animate-wiggle-slow{animation:k-wiggle-slow 2s infinite}
+@keyframes k-blink-slow{0%,100%{opacity:1}50%{opacity:0}}
+.animate-blink-slow{animation:k-blink-slow 2s infinite}
+@keyframes k-slide-bounce-up{0%{transform:translateY(80px)}60%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+.animate-slide-bounce-up{animation:k-slide-bounce-up 1.5s infinite}
+@keyframes k-heartbeat-slow{0%,100%{transform:scale(1)}25%{transform:scale(1.15)}40%{transform:scale(1)}60%{transform:scale(1.15)}}
+.animate-heartbeat-slow{animation:k-heartbeat-slow 2s infinite}
+@keyframes k-rubberband-slow{0%,100%{transform:scale(1,1)}30%{transform:scale(1.25,.75)}50%{transform:scale(.75,1.25)}70%{transform:scale(1.15,.85)}}
+.animate-rubberband-slow{animation:k-rubberband-slow 2s infinite}
+@keyframes k-head-shake-slow{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.animate-head-shake-slow{animation:k-head-shake-slow 2s infinite}
+@keyframes k-jello-slow{0%,100%{transform:skew(0)}30%{transform:skew(-12deg,-12deg)}50%{transform:skew(6deg,6deg)}70%{transform:skew(-3deg,-3deg)}}
+.animate-jello-slow{animation:k-jello-slow 2s infinite}
+@keyframes k-tada-slow{0%,100%{transform:scale(1)}10%,20%{transform:scale(.9) rotate(-3deg)}30%,50%,70%{transform:scale(1.1) rotate(3deg)}40%,60%{transform:scale(1.1) rotate(-3deg)}}
+.animate-tada-slow{animation:k-tada-slow 2s infinite}
+@keyframes k-bounce-in-left-slow{0%{transform:translateX(-60px);opacity:0}60%{transform:none;opacity:1}80%{transform:scale(.95)}100%{transform:none}}
+.animate-bounce-in-left-slow{animation:k-bounce-in-left-slow 2s infinite}
+@keyframes k-fade-in-left-slow{0%{transform:translateX(-60px);opacity:0}100%{transform:none;opacity:1}}
+.animate-fade-in-left-slow{animation:k-fade-in-left-slow 2s infinite}
+@keyframes k-slide-in-left-slow{0%{transform:translateX(-60px)}100%{transform:none}}
+.animate-slide-in-left-slow{animation:k-slide-in-left-slow 2s infinite}
+@keyframes k-bounce-in-right-slow{0%{transform:translateX(60px);opacity:0}60%{transform:none;opacity:1}80%{transform:scale(.95)}100%{transform:none}}
+.animate-bounce-in-right-slow{animation:k-bounce-in-right-slow 2s infinite}
+@keyframes k-fade-in-right-slow{0%{transform:translateX(60px);opacity:0}100%{transform:none;opacity:1}}
+.animate-fade-in-right-slow{animation:k-fade-in-right-slow 2s infinite}
+@keyframes k-slide-in-right-slow{0%{transform:translateX(60px)}100%{transform:none}}
+.animate-slide-in-right-slow{animation:k-slide-in-right-slow 2s infinite}
+@keyframes k-bounce-in-up-slow{0%{transform:translateY(-60px);opacity:0}60%{transform:none;opacity:1}80%{transform:scale(.95)}100%{transform:none}}
+.animate-bounce-in-up-slow{animation:k-bounce-in-up-slow 2s infinite}
+@keyframes k-fade-in-up-slow{0%{transform:translateY(-60px);opacity:0}100%{transform:none;opacity:1}}
+.animate-fade-in-up-slow{animation:k-fade-in-up-slow 2s infinite}
+@keyframes k-slide-in-up-slow{0%{transform:translateY(-60px)}100%{transform:none}}
+.animate-slide-in-up-slow{animation:k-slide-in-up-slow 2s infinite}
+@keyframes k-bounce-in-down-slow{0%{transform:translateY(60px);opacity:0}60%{transform:none;opacity:1}80%{transform:scale(.95)}100%{transform:none}}
+.animate-bounce-in-down-slow{animation:k-bounce-in-down-slow 2s infinite}
+@keyframes k-fade-in-down-slow{0%{transform:translateY(60px);opacity:0}100%{transform:none;opacity:1}}
+.animate-fade-in-down-slow{animation:k-fade-in-down-slow 2s infinite}
+@keyframes k-slide-in-down-slow{0%{transform:translateY(60px)}100%{transform:none}}
+.animate-slide-in-down-slow{animation:k-slide-in-down-slow 2s infinite}
+.animate-reverse{animation:k-fade-in 1.5s infinite reverse}
+.animate-ease-out{animation:k-zoom-in 1.5s ease-out infinite}
+.backdrop-blur-8{backdrop-filter:blur(8px)}
+.hyphens-auto{hyphens:auto}
+.scroll-behavior-auto{scroll-behavior:auto}
+.touch-action-none{touch-action:none}
+.snap-type-mandatory{scroll-snap-type:y mandatory}
+.snap-align-start{scroll-snap-align:start}
+.scroll-padding-4{scroll-padding:1rem}
+.scroll-margin-4{scroll-margin:1rem}
+.relative-card{position:relative}
